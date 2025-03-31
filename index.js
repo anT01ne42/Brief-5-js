@@ -48,6 +48,10 @@ Utilisateur.amisUser[0] = "Marc"; // Remplace un ami
 console.log("Liste des amis:");
 Utilisateur.amisUser.forEach(ami => console.log(ami));
 
+//tester si une personne en particulier est dans la liste d'amis
+let testInclu = "Clara";
+console.log("Est ce que " + testInclu + " est inclu dans la liste ? --> " + Utilisateur.amisUser.includes(testInclu));
+
 //🔹 9. Conditions
 //Si l’utilisateur a moins de 18 ans, affiche “Mineur”
 //S’il a entre 18 et 25 ans, affiche “Jeune adulte”
@@ -95,7 +99,7 @@ afficherProfil(Utilisateur);
 //Crée une fonction ajouterAmi qui ajoute un prénom dans le tableau amis de l’objet utilisateur
 function ajouterAmi(user, ami) {
     user.amisUser.push(ami);
-    console.log(`${ami} a été ajouté aux amis.`);
+    console.log(ami + " a été ajouté aux amis.");
 }
 ajouterAmi(Utilisateur, "Sophie");
 
@@ -104,9 +108,9 @@ function supprimerAmi(user, ami) {
     let index = user.amisUser.indexOf(ami);
     if (index !== -1) {
         user.amisUser.splice(index, 1);
-        console.log(`${ami} a été supprimé des amis.`);
+        console.log(ami + " a été supprimé des amis.");
     } else {
-        console.log(`${ami} n'est pas dans la liste des amis.`);
+        console.log(ami + " n'est pas dans la liste des amis.");
     }
 }
 supprimerAmi(Utilisateur, "Paul");
